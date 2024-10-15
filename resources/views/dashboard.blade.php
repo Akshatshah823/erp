@@ -12,7 +12,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <h2>ULTRA <span class="primary">CODE</span></h2>
+                    <h2>ERP <span class="primary">Swiss</span></h2>
                 </div>
                 <div class="close" id="close-btn">
                     <span class="material-symbols-outlined"> close </span>
@@ -20,47 +20,13 @@
             </div>
 
             <div class="sidebar">
-                <a href="#">
-                    <span class="material-symbols-outlined"> grid_view </span>
-                    <h3>Dashboard</h3>
-                </a>
-
-                <a href="#" class="active">
-                    <span class="material-symbols-outlined"> person_outline </span>
-                    <h3>Customers</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> insights </span>
-                    <h3>Analytics</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> mail_outline </span>
-                    <h3>Messages</h3>
-                    <span class="msg-count">14</span>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> receipt_long </span>
-                    <h3>Products</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> report_gmailerrorred </span>
-                    <h3>Reports</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> settings </span>
-                    <h3>Settings</h3>
-                </a>
-
-                <a href="#">
-                    <span class="material-symbols-outlined"> add </span>
-                    <h3>Add Product</h3>
-                </a>
-
+                @foreach($menu as $data)
+                    <a href="{{ $data->url }}">
+                        <span class="material-symbols-outlined">grid_view</span>
+                        <h3>{{ $data->menu_name }}</h3>
+                    </a>
+                @endforeach
+           
                 <a href="#">
                     <span class="material-symbols-outlined"> logout </span>
                     <h3>Logout</h3>
@@ -72,7 +38,7 @@
             <h1>Dashboard</h1>
 
                 <div class="date">
-                    <input type="date">
+                    <input type="date" value="{{ date('Y-m-d') }}">     
                 </div>
 
             <div class="insights">

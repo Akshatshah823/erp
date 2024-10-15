@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthenticationController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('authentication.login');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::post('/login',[AuthenticationController::class , 'login']);
+Route::get('/dashboard', [DashboardController::class, 'viewMenu']);
